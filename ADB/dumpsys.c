@@ -8,11 +8,11 @@
 int main() {
 
     p("\nOther Features");
-    p("\n1. Device State    2. Serial No.");
-    p("\n3. IMEI            4. Netstat");
-    p("\n5. Phone Features  6. Services");
-    p("\n7. Process Status  8. Screen Resolution");
-    p("\n9. Backup ALL      10.List Packages (10-10.5)");
+    p("\n[1] Device State    [2] Serial No.");
+    p("\n[3] IMEI            [4] Netstat");
+    p("\n[5] Phone Features  [6] Services");
+    p("\n[7] Process Status  [8] Screen Resolution");
+    p("\n[9] Backup ALL      [10] List Packages (10-10.5)");
     p("\n");
     s("%c", &ch);
 
