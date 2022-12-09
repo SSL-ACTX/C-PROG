@@ -9,12 +9,12 @@
 int main() {
 
     p("\nChoose a Function: ");
-    p("\nA. ADB Connect    B. ADB Disconnect");
-    p("\nC. Full Dump      D. Battery Status");
-    p("\nE. Watch Logcat   F. Devices");
-    p("\nG. Private Inf.   H. Reboot (Advance)");
-    p("\nI. Help           J. Bug Report");
-    p("\nX. Restart ADB as ROOT");
+    p("\n[A] ADB Connect    [B] ADB Disconnect");
+    p("\n[C] Full Dump      [D] Battery Status");
+    p("\n[E] Watch Logcat   [F] Devices");
+    p("\n[G] Private Inf.   [H] Reboot (Advance)");
+    p("\n[I] Help           [J] Bug Report");
+    p("\n[X] Restart ADB as ROOT");
     p("\n");
     s("%c", &ex);
 
