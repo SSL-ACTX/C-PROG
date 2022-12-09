@@ -1,3 +1,4 @@
 # C-Programs
 
-![giphy](https://user-images.githubusercontent.com/120081647/206615342-6a9f89b0-f805-47d3-b0ab-a48db25e886b.gif)
+# Time Spent:
+[![wakatime](https://wakatime.com/badge/user/570483a7-7acc-4ffd-bc90-1f7ced8b6587/project/5e9fdfbb-ea95-419e-b77c-25d7a866bcfd.svg)](https://wakatime.com/badge/user/570483a7-7acc-4ffd-bc90-1f7ced8b6587/project/5e9fdfbb-ea95-419e-b77c-25d7a866bcfd)
