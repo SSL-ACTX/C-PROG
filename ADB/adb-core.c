@@ -6,10 +6,8 @@
  *       newbie in C, forgive me. :(                                               *
  *                                             - SSL-ACTX (Jameel)                 *
  */
-
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 
 #define s scanf
 #define sys system
