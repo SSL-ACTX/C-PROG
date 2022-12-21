@@ -29,7 +29,8 @@ int main() {
     }
     else {
         printf("\n\n\n Invalid!, restarting...\n");
-        sys("cls"); goto mwelg;
+        sys("cls");
+        goto mwelg;
     }
 //main  prog switch
     switch (mcat) {
@@ -45,6 +46,7 @@ int main() {
         printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples");
         s("%s", &prog);
         /*Choices mechanism*/
+                    F= (C * 9/5) + 32;
         if(prog=='1') { // Grade Computation Program
             printf("\n Grade Computation");
             printf("\n Enter your name: ");
@@ -105,8 +107,7 @@ int main() {
         else if(prog=='3') {
             printf("\n F-C Converter");
             printf("\n Enter temperature in Celsius: ");
-            s("%f", &C);
-            F= (C * 9/5) + 32;//Formula
+            s("%f", &C);//Formula
             printf("\n-----Results-----\n");
             printf("\n %.1f Celsius = %.1f Fahrenheit", C, F);
         }
@@ -295,7 +296,7 @@ int main() {
           }
           if(net<0){
             sys("color 4");
-            printf("YOUR INCOME IS NOT ENOUGH BECAUSE YOU LACK !");
+            printf("YOUR INCOME IS NOT ENOUGH!");
           }
         } //Midterm group proj. end
         else if(prog=='9') {
@@ -305,9 +306,9 @@ int main() {
           sum = fir + sec + thr;
           dif= (float)(thr + sec)/2;
           product= fir * thr;
-          printf("Sum of 1st, 2nd, and 3rd Numbers is : %d", sum);
-          printf("The difference of %d and %d is: %.2f", thr, sec, dif);
-          printf("Product of 1st and 3rd Number: %d", fir, thr, product);
+          printf("\n Sum of 1st, 2nd, and 3rd Numbers is : %d", sum);
+          printf("\n The difference of %d and %d is: %.2f", thr, sec, dif);
+          printf("\n Product of 1st and 3rd Number: %d", fir, thr, product);
         } //Lab exam end
         else if(prog=='10') {
           printf("\nOperators\n");
@@ -324,7 +325,7 @@ int main() {
           else if(oprtr=='3') {
             printf("\nEmpty!");
           }
-        } // Operator end
+        } break; // Operator end
 
         case 2: // Complex code --- idk this code will work..
         /* This program requires ADB(Android Debugging Interface) installed to the system. *
