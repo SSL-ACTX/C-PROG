@@ -46,7 +46,6 @@ int main() {
         printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples");
         s("%s", &prog);
         /*Choices mechanism*/
-                    F= (C * 9/5) + 32;
         if(prog=='1') { // Grade Computation Program
             printf("\n Grade Computation");
             printf("\n Enter your name: ");
@@ -107,7 +106,8 @@ int main() {
         else if(prog=='3') {
             printf("\n F-C Converter");
             printf("\n Enter temperature in Celsius: ");
-            s("%f", &C);//Formula
+            s("%f", &C);
+            F= (C * 9/5) + 32;//Formula
             printf("\n-----Results-----\n");
             printf("\n %.1f Celsius = %.1f Fahrenheit", C, F);
         }
