@@ -499,7 +499,7 @@ int main() {
     }
         } // Main switch end bracket
 
-//Exit menu
+/*Exit menu--commented for now
     printf("\n\n [1] Return to  Main Menu");
     printf("\n\n [2] Exit\n");
     s("%s", &exm);
@@ -510,7 +510,7 @@ int main() {
     else if(exm=='2') {
         exit(0);
     }
-
+*/
 
       return 0;
 } // int main end bracket
