@@ -61,8 +61,8 @@ int main() {
             printf("\n Enter the Grade of Class Standing: ");
             s("%f", &cs);
             printf("\n Enter the Grade of Major Exam: ");
-            s("%f", &me);
-            grade=(cs*.10)+(quiz*.15)+(assign*.15)+(proj*.20)+(me*.40);// formula
+            s("%f", &me);// formula replaced
+            grade=(cs*.10)+(quiz*.15)+(assign*.15)+(proj*.20)+(me*.40);
             sys("cls");
             printf("\n Name: %s", name);
             printf("\n Your Grade: %.2f", grade);
@@ -101,7 +101,7 @@ int main() {
               printf("\n It's color Violet!");
             }
             else {
-              printf("\n Unknow Color!, restarting...");\
+              printf("\n Unknown Color!, restarting...");\
               sys("cls"); goto colselect; break;
             }
         } // color selection end
