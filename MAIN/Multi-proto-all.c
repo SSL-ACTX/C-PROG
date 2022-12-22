@@ -105,11 +105,11 @@ int main() {
         } // color selection end
         else if(prog=='3') {
             printf("\n F-C Converter");
-            printf("\n Enter temperature in Celsius: ");
-            s("%f", &C);
-            F= (C * 9/5) + 32;//Formula
+            printf("\n Enter temperature in Fahrenheit: ");
+            s("%f", &F);
+            C=(F-32)*5/9;//Formula
             printf("\n-----Results-----\n");
-            printf("\n %.1f Celsius = %.1f Fahrenheit", C, F);
+            printf("\n %.1f Fahrenheit = %.1f Celsius", F, C);
         }
         else if(prog=='4') {
             printf("\n C-F Converter");
