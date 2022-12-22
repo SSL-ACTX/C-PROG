@@ -23,7 +23,7 @@ int main() {
         printf("\n\n\n\n");
         printf("\n                                    MENU \n\n");
         printf("\n                 [1] PROG-1 C Programs       [2] ADB Program");
-        printf("\n\n                                 [3] Credits\n");
+        printf("\n                 [3] Credits                 [4] Exit\n");
         printf("\n          Choose: ");
         s("%d", &mcat);
     }
@@ -42,7 +42,7 @@ int main() {
         printf("\n  [2] Color Selection           [7] For-Loops [M]");
         printf("\n  [3] Fahrenheit to Celsius     [8] Midterm Group Project [!]");
         printf("\n  [4] Celsius to Fahrenheit     [9] LAB Exam [!]");
-        printf("\n  [5] Registration Form         [10] Operators [E]");
+        printf("\n  [5] Registration Form         [X] Operators [E]");
         printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples\n");
         s("%s", &prog);
         /*Choices mechanism*/
@@ -198,7 +198,7 @@ int main() {
             printf("\nIncrements & Decrements\n");
             printf("\n[1] Pre Increment       [3] Post Increment\n");
             printf("\n[2] Pre Decrement       [4] Post Decrement\n");
-            s("%d", &incdec);
+            s("%s", &incdec);
             if(incdec=='1') {
               printf("INPUT THE VALUE OF X: ");
               s("%d", &x);
@@ -267,28 +267,33 @@ int main() {
         } // Post decrement end
         else if(prog=='7') { // For loop
           sys("cls");
-          printf("\n\n[1] For-Loop Increment\n");
-          printf("    [2] For-Loop Decrement\n");
-          s("%d", &forl);
-          if(forl=='2') {
-            printf("\nEnter starting value: \n");
+          printf("\n  [1] For-Loop Decrement\n");
+          printf("\n  [2] For-Loop Increment\n");
+          s("%s", &forl);
+          if(forl=='1') {
+            sys("cls");
+            printf("\n Enter starting value: \n");
             s("%d", &st);
-            printf("\nEnter ending value: \n");
+            printf("\n Enter ending value: \n");
             s("%d", &en);
+            sys("cls");
+            printf("\n\n Starting value:  %d   Ending Value:  %d \n\n", st, en);
             for (st; en<=st; st--)
             {
-              printf("%d\n", st);
+              printf(" %d\n", st);
             }
           } // for loop decrement
-          else if(forl=='1') {
+          else if(forl=='2') {
            sys("cls");
-           printf("\nEnter starting value: \n");
+           printf("\n Enter starting value: \n");
            s("%d", &st);
-           printf("\nEnter ending value: \n");
+           printf("\n Enter ending value: \n");
            s("%d", &en);
+           sys("cls");
+           printf("\n\n Starting value:  %d   Ending Value:  %d \n\n", st, en);
            for (st; st<=en; st++)
            {
-             printf("%d\n", st);
+             printf(" %d\n", st);
            }
           }
         } // for loop increment
@@ -325,9 +330,9 @@ int main() {
         } //Midterm group proj. end
         else if(prog=='9') {
           sys("cls");
-          printf("\nLAB Exam\n");
-          printf("Enter Three Numbers : \n");
-          s("%d %d %d",&fir, &sec, &thr);
+          printf("\n LAB Exam\n");
+          printf("\n Enter Three Numbers : \n");
+          s(" %d %d %d",&fir, &sec, &thr);
           sum = fir + sec + thr;
           dif= (float)(thr + sec)/2;
           product= fir * thr;
@@ -343,12 +348,15 @@ int main() {
           printf("\n[3] Relational Operator");
           s("%s", &oprtr);
           if(oprtr=='1') {
+            sys("cls");
             printf("\nEmpty!");
           }
           else if(oprtr=='2') {
+            sys("cls");
             printf("\nEmpty!");
           }
           else if(oprtr=='3') {
+            sys("cls");
             printf("\nEmpty!");
           }
         } break; // Operator end
@@ -521,7 +529,18 @@ int main() {
         default:
           printf("\nUnknown!");
     }
-        } // Main switch end bracket
+
+        case 3:
+            credits:
+            printf("\n\nCredits");
+            printf("\n\n\t\t--SSL ACTX      --J4m");
+            goto credits;
+
+        case 4:
+            printf("\n  Thank You!    Exiting....\n");
+            return 0; break;
+
+        }// Main switch end bracket
 
    //Exit menu--commented for now
     printf("\n\n [1] Return to  Main Menu");
