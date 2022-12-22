@@ -1,3 +1,8 @@
+/* All codes here may or may not change as time pass by. I'll update this every week(?) from now on. *
+ * I'm planning to add graphics which uses "graphics.h" header for the welcome screen, though I'm    *
+ * hesitating because MinGW and Code::Blocks "gcc" compilers doesn't have it. Have a good day!       *
+ *                                                                     --SSL ACTX                   */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -531,10 +536,9 @@ int main() {
     }
 
         case 3:
-            credits:
             printf("\n\nCredits");
             printf("\n\n\t\t--SSL ACTX      --J4m");
-            goto credits;
+            break;
 
         case 4:
             printf("\n  Thank You!    Exiting....\n");
