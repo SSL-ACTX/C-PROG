@@ -4,7 +4,7 @@
 #define s scanf
 #define sys system
 
-   char name, mwel, color, ex, cat, inf, wc, rebp, incdec, forl, oprtr, prog;
+   char name, mwel, color, ex, cat, inf, wc, rebp, incdec, forl, prog, oprtr;
    char NAMER[50], ADDR[100], BDAY[100], EM[100], CZ[100], FN[100], MN[100], PRI[50], SEC[50], TER[50], FC[50], SC[50], TC[50];
    float quiz, assign, proj, cs, me, grade, C, F, rent, trans, groc, elec, water, med_exp, educ_exp, si, net, dif;
    int exm, mcat, AGE, x, y, z, a, b, c, st, en, fir, sec, thr, sum, product;
@@ -335,13 +335,13 @@ int main() {
           printf("\n The difference of %d and %d is: %.2f", thr, sec, dif);
           printf("\n Product of 1st and 3rd Number: %d", fir, thr, product);
         } //Lab exam end
-        else if(prog=='10') {
+        else if(prog=='X'||prog=='x') {
           sys("cls");
           printf("\nOperators\n");
           printf("\n[1] Bitwise Operator");
           printf("\n[2] Logical Operator");
           printf("\n[3] Relational Operator");
-          s("%d", &oprtr);
+          s("%s", &oprtr);
           if(oprtr=='1') {
             printf("\nEmpty!");
           }
