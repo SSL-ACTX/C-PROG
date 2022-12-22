@@ -43,7 +43,7 @@ int main() {
         printf("\n  [3] Fahrenheit to Celsius     [8] Midterm Group Project [!]");
         printf("\n  [4] Celsius to Fahrenheit     [9] LAB Exam [!]");
         printf("\n  [5] Registration Form         [10] Operators [E]");
-        printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples");
+        printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples\n");
         s("%s", &prog);
         /*Choices mechanism*/
         if(prog=='1') { // Grade Computation Program
@@ -74,8 +74,8 @@ int main() {
         } // grade computation end
         else if(prog=='2') {
             colselect:
-            printf("\n Color Selection");
-            printf("First letter of a color: ");
+            printf("\n Color Selection\n\n");
+            printf("   First letter of a color: ");
             s("%c", &color);
             if(color=='R'||color=='r') {
               printf("\n It's color Red!");
