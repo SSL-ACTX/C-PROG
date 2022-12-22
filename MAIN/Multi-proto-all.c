@@ -47,6 +47,7 @@ int main() {
         s("%s", &prog);
         /*Choices mechanism*/
         if(prog=='1') { // Grade Computation Program
+            sys("cls");
             printf("\n Grade Computation");
             printf("\n Enter your name: ");
             s("%s", &name);
@@ -74,6 +75,7 @@ int main() {
         } // grade computation end
         else if(prog=='2') {
             colselect:
+            sys("cls");
             printf("\n Color Selection\n\n");
             printf("   First letter of a color: ");
             s("%c", &color);
@@ -116,6 +118,7 @@ int main() {
             }
         } // color selection end
         else if(prog=='3') {
+            sys("cls");
             printf("\n F-C Converter");
             printf("\n Enter temperature in Fahrenheit: ");
             s("%f", &F);
@@ -124,6 +127,7 @@ int main() {
             printf("\n %.1f Fahrenheit = %.1f Celsius", F, C);
         }
         else if(prog=='4') {
+            sys("cls");
             printf("\n C-F Converter");
             printf("\n");
             printf("Celsius: ");
@@ -134,6 +138,7 @@ int main() {
             printf("\n %.2f Celsius to %.2f Fahrenheit", C, F);
         } //Converter end
         else if(prog=='5') {
+            sys("cls");
             printf("\n Registration Form");
             printf("\n-------------PROFILE-------------\n");
             printf("\nENTER YOUR NAME: ");
@@ -174,7 +179,7 @@ int main() {
             printf("\nAGE: %d", AGE);
             printf("\nBIRTHDAY: %s", BDAY);
             printf("\nADDRESS: %s", ADDR);
-            printf("\nCONTACT NUMBER: 0%lld", cp);
+            printf("\nCONTACT NUMBER: %lld", cp);
             printf("\nEMAIL: %s", EM);
             printf("\nCITIZENSHIP: %s", CZ);
             printf("\nFATHER'S NAME: %s", FN);
@@ -189,6 +194,7 @@ int main() {
             printf("\nTHIRD CHOICE: %s", TC);
         } // Registration form end
         else if(prog=='6') {
+            sys("cls");
             printf("\nIncrements & Decrements\n");
             printf("\n[1] Pre Increment       [3] Post Increment\n");
             printf("\n[2] Pre Decrement       [4] Post Decrement\n");
@@ -208,6 +214,7 @@ int main() {
               printf("\nTHE UPDATED VALUE OF THE Z IS: %d", z);
             } // pre increment end
             else if(incdec=='2') {
+              sys("cls");
               printf("INPUT THE VALUE OF X: ");
               s("%d", &x);
               printf("INPUT THE VALUE OF Y: ");
@@ -222,6 +229,7 @@ int main() {
               printf("\nTHE UPDATED VALUE OF THE Z IS: %d", z);
             } // pre decrement end
             else if(incdec=='3') {
+              sys("cls");
               printf("INPUT THE VALUE OF X: ");
               s("%d", &x);
               printf("INPUT THE VALUE OF Y: ");
@@ -239,6 +247,7 @@ int main() {
               printf("\nTHE UPDATED VALUE OF THE Z IS: %d", z);
             }
             else if(incdec=='4') {
+              sys("cls");
               printf("INPUT THE VALUE OF X: ");
               s("%d", &x);
               printf("INPUT THE VALUE OF Y: ");
@@ -257,6 +266,7 @@ int main() {
             }
         } // Post decrement end
         else if(prog=='7') { // For loop
+          sys("cls");
           printf("\n\n[1] For-Loop Increment\n");
           printf("    [2] For-Loop Decrement\n");
           s("%d", &forl);
@@ -271,6 +281,7 @@ int main() {
             }
           } // for loop decrement
           else if(forl=='1') {
+           sys("cls");
            printf("\nEnter starting value: \n");
            s("%d", &st);
            printf("\nEnter ending value: \n");
@@ -282,6 +293,7 @@ int main() {
           }
         } // for loop increment
         else if(prog=='8') {
+          sys("cls");
           printf("\nMidterm Group Project\n");
           printf("ENTER YOUR RENT: ");
           s("%f", &rent);
@@ -312,6 +324,7 @@ int main() {
           }
         } //Midterm group proj. end
         else if(prog=='9') {
+          sys("cls");
           printf("\nLAB Exam\n");
           printf("Enter Three Numbers : \n");
           s("%d %d %d",&fir, &sec, &thr);
@@ -323,6 +336,7 @@ int main() {
           printf("\n Product of 1st and 3rd Number: %d", fir, thr, product);
         } //Lab exam end
         else if(prog=='10') {
+          sys("cls");
           printf("\nOperators\n");
           printf("\n[1] Bitwise Operator");
           printf("\n[2] Logical Operator");
