@@ -98,6 +98,18 @@ int main() {
             else if(color=='V'||color=='v') {
               printf("\n It's color Violet!");
             }
+            else if(color=='P'||color=='p') {
+              printf("\n It's color Pink!");
+            }
+            else if(color=='T'||color=='t') {
+              printf("\n It's color Teal!");
+            }
+            else if(color=='C'||color=='c') {
+              printf("\n It's color Cyan!");
+            }
+            else if(color=='D'||color=='d') {
+              printf("\n It's color Dandelion!");
+            }
             else {
               printf("\n Unknown Color!, restarting...");\
               sys("cls"); goto colselect; break;
