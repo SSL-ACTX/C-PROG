@@ -6,8 +6,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <windows.h>
 #define s scanf
 #define sys system
+
+void loadingBar()
+{
+	system("color 0A");
+
+	char a = 177, b = 219;
+
+	printf("\n\n\n\n");
+	printf("\n\n\n\n\t\t     Loading...\n\n");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++)
+		printf("%c", a);
+
+	printf("\r");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++) {
+		printf("%c", b);
+
+		Sleep(80);
+	}
+}
 
    char name, nameg[30], mwel, color, ex, cat, inf, wc, rebp, incdec, forl, prog, oprtr;
    char NAMER[50], ADDR[100], BDAY[100], EM[100], CZ[100], FN[100], MN[100], PRI[50], SEC[50], TER[50], FC[50], SC[50], TC[50];
@@ -17,7 +41,10 @@
 
 int main() {
 
+    loadingBar();
     mwelg:
+    system("cls");
+	system("color 07");
     printf("\t\t\t\t\t\t\t\t\t\t\n\n");
     printf("\n\n\n\n\n\n\t\t\t\ MULTI-PROGRAM (TESTING)\n\t\t");
     printf("\n\t\t\t  Continue?   [Y]  [N] ");
