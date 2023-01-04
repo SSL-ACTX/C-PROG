@@ -9,7 +9,7 @@
 #define s scanf
 #define sys system
 
-   char name, mwel, color, ex, cat, inf, wc, rebp, incdec, forl, prog, oprtr;
+   char name, nameg[30], mwel, color, ex, cat, inf, wc, rebp, incdec, forl, prog, oprtr;
    char NAMER[50], ADDR[100], BDAY[100], EM[100], CZ[100], FN[100], MN[100], PRI[50], SEC[50], TER[50], FC[50], SC[50], TC[50];
    float quiz, assign, proj, cs, me, grade, C, F, rent, trans, groc, elec, water, med_exp, educ_exp, si, net, dif;
    int exm, mcat, AGE, x, y, z, a, b, c, st, en, fir, sec, thr, sum, product;
@@ -53,9 +53,9 @@ int main() {
         /*Choices mechanism*/
         if(prog=='1') { // Grade Computation Program
             sys("cls");
-            printf("\n Grade Computation");
-            printf("\n Enter your name: ");
-            s("%s", &name);
+            printf("\n Grade Computation\n");
+            printf("\n Enter your Name: ");
+            s("%s", &nameg);
             printf("\n Enter the Grade of Quiz: ");
             s("%f", &quiz);
             printf("\n Enter the Grade of Assignment: ");
@@ -65,17 +65,17 @@ int main() {
             printf("\n Enter the Grade of Class Standing: ");
             s("%f", &cs);
             printf("\n Enter the Grade of Major Exam: ");
-            s("%f", &me);// formula replaced
+            s("%f", &me);
             grade=(cs*.10)+(quiz*.15)+(assign*.15)+(proj*.20)+(me*.40);
             sys("cls");
-            printf("\n Name: %s", name);
+            printf("\n Name: %s", nameg);
             printf("\n Your Grade: %.2f", grade);
             printf("\n");
             if(grade>=75) {
               printf("\n You Passed!\n");\
             }
             else {
-              printf("You Failed!\n");
+              printf("\n You Failed!\n");
             }
         } // grade computation end
         else if(prog=='2') {
