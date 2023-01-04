@@ -25,15 +25,21 @@ int main() {
     if(mwel=='Y'||mwel=='y') {
         choi:
         sys("cls");
-        printf("\n\n\n\n");
+        printf("\n\n\n\n\n\n");
         printf("\n                                    MENU \n\n");
         printf("\n                 [1] PROG-1 C Programs       [2] ADB Program");
         printf("\n                 [3] Credits                 [4] Exit\n");
-        printf("\n          Choose: ");
+        printf("\n          Choice: ");
         s("%d", &mcat);
+    }
+    else if(mwel=='N'||mwel=='n') {
+        printf("\n Terminating process...\n");
+        sleep(3);
+        return 0;
     }
     else {
         printf("\n\n\n Invalid!, restarting...\n");
+        sleep(2);
         sys("cls");
         goto mwelg;
     }
@@ -42,13 +48,14 @@ int main() {
 
         case 1:
         sys("cls");
-        printf("\n PROG-1 C Programs \n");
-        printf("\n  [1] Grade Computation         [6] Increments & Decrements [M]");
-        printf("\n  [2] Color Selection           [7] For-Loops [M]");
-        printf("\n  [3] Fahrenheit to Celsius     [8] Midterm Group Project [!]");
-        printf("\n  [4] Celsius to Fahrenheit     [9] LAB Exam [!]");
-        printf("\n  [5] Registration Form         [X] Operators [E]");
-        printf("\n\n\n Legend:  [M] - Menu   [!] - Important   [E] - Examples\n");
+        printf("\n\n\n\n");
+        printf("\n                             *  PROG-1 C Programs  *\n");
+        printf("\n           [1] Grade Computation         [6] Increments & Decrements [M]");
+        printf("\n           [2] Color Selection           [7] For-Loops [M]");
+        printf("\n           [3] Fahrenheit to Celsius     [8] Midterm Group Project [!]");
+        printf("\n           [4] Celsius to Fahrenheit     [9] LAB Exam [!]");
+        printf("\n           [5] Registration Form         [X] Operators [E]");
+        printf("\n\n\n            Legend:  [M] - Menu   [!] - Important   [E] - Examples\n");
         s("%s", &prog);
         /*Choices mechanism*/
         if(prog=='1') { // Grade Computation Program
@@ -366,14 +373,14 @@ int main() {
           }
         } break; // Operator end
 
-        case 2: // Complex code --- idk this code will work..
+        case 2: //adb commands here...
         /* This program requires ADB(Android Debugging Interface) installed to the system. *
          * ADB should be registered at "PATH" in "Environmental Variables in Windows OS.   *
          * Otherwise, this won't work. :)                                                  *
          *                                                                                 *
          * Note: I'm aware that using "goto" makes the code a "spaghetti", however I'm a   *
          *       newbie in C, forgive me. :(                                               *
-         *                                             - SSL-ACTX (Jameel)                 *
+         *                                             - SSL-ACTX                          *
          *                                                                                */
         core:
         sys("cls");
@@ -514,9 +521,7 @@ int main() {
           else {
             printf("Invalid!\n"); goto inf;
 
-          }
-
-          break;
+          } break;
 
         case 'i': case 'I':
           printf("\nHelp\n");
@@ -533,15 +538,35 @@ int main() {
 
         default:
           printf("\nUnknown!");
+
     }
 
         case 3:
-            printf("\n\nCredits");
-            printf("\n\n\t\t--SSL ACTX      --J4m");
+            sleep(1);
+            sys("cls");
+            printf("\n\n\t  Credits\n");
+            sleep(1);
+            sys("cls");
+            printf("\n\n\n\n\n\n\n\n\n\n\n");
+            printf("\t\t\t        *- SSL ACTX -*");
+            colop:
+            sys("color 12");
+            sys("color 23");
+            sys("color 34");
+            sys("color 45");
+            sys("color 56");
+            sys("color 67");
+            sys("color 78");
+            sys("color 89");
+            sys("color 90");
+            sys("color");
+            goto colop;
             break;
 
         case 4:
             printf("\n  Thank You!    Exiting....\n");
+            sleep(1);
+            sys("cls");
             return 0; break;
 
         }// Main switch end bracket
@@ -555,6 +580,7 @@ int main() {
         goto choi;
     }
     else if(exm=='2') {
+        sleep(1);
         exit(0);
     }
 
