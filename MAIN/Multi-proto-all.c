@@ -7,17 +7,59 @@
 #include <stdlib.h>
 #include <math.h>
 #include <windows.h>
+#include <time.h>
+
+#define WIDTH  80
+#define HEIGHT 40
+#define idx(x, y) ((x)+WIDTH*(y))
 #define s scanf
 #define sys system
 
-void loadingBar()
+struct trail {
+	float start;
+	float end;
+	float speed;
+} trails[WIDTH];
+
+void init_trail(struct trail *trail)
 {
-	system("color 0A");
+	trail->start = -(float)(rand() % HEIGHT);
+	trail->end = 0;
+	trail->speed = (rand() % 5) / 10.0f + 0.2f;
+}
+
+void update(CHAR_INFO consoleBuffer[])
+{
+	CHAR_INFO space = {.Char.AsciiChar=' ', .Attributes=0};
+
+	for (int x = 0; x < WIDTH; x++) {
+		for (int y = 0; y < HEIGHT; y++)
+			consoleBuffer[idx(x, y)] = space;
+
+		int start = trails[x].start < 0 ? 0 : (int)trails[x].start;
+		int end = trails[x].end > HEIGHT ? HEIGHT : (int)trails[x].end;
+
+		for (int y = start; y < end; y++)
+			consoleBuffer[idx(x, y)] = (CHAR_INFO) {
+			.Char.AsciiChar = rand() % 256,
+			.Attributes = FOREGROUND_GREEN |
+			(y < (int)trails[x].end-1 ? 0 :
+			FOREGROUND_RED | FOREGROUND_BLUE)};
+
+		trails[x].start += trails[x].speed;
+		trails[x].end += trails[x].speed;
+
+		if (trails[x].start >= HEIGHT)
+			init_trail(&trails[x]);
+	}
+}
+
+void loadingBar() {
 
 	char a = 177, b = 219;
 
 	printf("\n\n\n\n");
-	printf("\n\n\n\n\t\t     Loading...\n\n");
+	printf("\n\n\n\n\t\t        Loading...\n\n");
 	printf("\t\t\t");
 
 	for (int i = 0; i < 26; i++)
@@ -29,7 +71,49 @@ void loadingBar()
 	for (int i = 0; i < 26; i++) {
 		printf("%c", b);
 
-		Sleep(80);
+		Sleep(30);
+	}
+}
+
+void endloadingbar() {
+
+	char a = 177, b = 219;
+
+	printf("\n\n\n\n");
+	printf("\n\n\n\n\t\t        Loading...\n\n");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++)
+		printf("%c", a);
+
+	printf("\r");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++) {
+		printf("%c", b);
+
+		Sleep(20);
+	}
+}
+
+void fastloadbar() {
+
+	char a = 177, b = 219;
+
+	printf("\n\n\n\n");
+	printf("\n\n\n\n\t\t        Loading...\n\n");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++)
+		printf("%c", a);
+
+	printf("\r");
+	printf("\t\t\t");
+
+	for (int i = 0; i < 26; i++) {
+		printf("%c", b);
+
+		Sleep(1);
 	}
 }
 
@@ -41,17 +125,18 @@ void loadingBar()
 
 int main() {
 
-    loadingBar();
     mwelg:
+    SetConsoleTitle(TEXT("C Program (Testing)"));
+    loadingBar();
     system("cls");
-	system("color 07");
     printf("\t\t\t\t\t\t\t\t\t\t\n\n");
-    printf("\n\n\n\n\n\n\t\t\t\ MULTI-PROGRAM (TESTING)\n\t\t");
+    printf("\n\n\n\n\n\n\t\t\t\    PROGRAM (TESTING)\n\t\t");
     printf("\n\t\t\t  Continue?   [Y]  [N] ");
     s("%c", &mwel);
     if(mwel=='Y'||mwel=='y') {
         choi:
         sys("cls");
+        SetConsoleTitle(TEXT("Menu"));
         printf("\n\n\n\n\n\n");
         printf("\n                                    MENU \n\n");
         printf("\n                 [1] PROG-1 C Programs       [2] ADB Program");
@@ -74,6 +159,9 @@ int main() {
     switch (mcat) {
 
         case 1:
+        SetConsoleTitle(TEXT("PROG-1"));
+        sys("cls");
+        fastloadbar();
         sys("cls");
         printf("\n\n\n\n");
         printf("\n                             *  PROG-1 C Programs  *\n");
@@ -86,6 +174,8 @@ int main() {
         s("%s", &prog);
         /*Choices mechanism*/
         if(prog=='1') { // Grade Computation Program
+            sys("cls");
+            fastloadbar();
             sys("cls");
             printf("\n Grade Computation\n");
             printf("\n Enter your Name: ");
@@ -114,6 +204,8 @@ int main() {
         } // grade computation end
         else if(prog=='2') {
             colselect:
+            sys("cls");
+            fastloadbar();
             sys("cls");
             printf("\n Color Selection\n\n");
             printf("   First letter of a color: ");
@@ -158,6 +250,8 @@ int main() {
         } // color selection end
         else if(prog=='3') {
             sys("cls");
+            fastloadbar();
+            sys("cls");
             printf("\n F-C Converter");
             printf("\n Enter temperature in Fahrenheit: ");
             s("%f", &F);
@@ -166,6 +260,8 @@ int main() {
             printf("\n %.1f Fahrenheit = %.1f Celsius", F, C);
         }
         else if(prog=='4') {
+            sys("cls");
+            fastloadbar();
             sys("cls");
             printf("\n C-F Converter");
             printf("\n");
@@ -177,6 +273,8 @@ int main() {
             printf("\n %.2f Celsius to %.2f Fahrenheit", C, F);
         } //Converter end
         else if(prog=='5') {
+            sys("cls");
+            fastloadbar();
             sys("cls");
             printf("\n Registration Form");
             printf("\n-------------PROFILE-------------\n");
@@ -233,6 +331,8 @@ int main() {
             printf("\nTHIRD CHOICE: %s", TC);
         } // Registration form end
         else if(prog=='6') {
+            sys("cls");
+            fastloadbar();
             sys("cls");
             printf("\nIncrements & Decrements\n");
             printf("\n[1] Pre Increment       [3] Post Increment\n");
@@ -305,10 +405,12 @@ int main() {
             }
         } // Post decrement end
         else if(prog=='7') { // For loop
-          sys("cls");
-          printf("\n  [1] For-Loop Decrement\n");
-          printf("\n  [2] For-Loop Increment\n");
-          s("%s", &forl);
+            sys("cls");
+            fastloadbar();
+            sys("cls");
+            printf("\n  [1] For-Loop Decrement\n");
+            printf("\n  [2] For-Loop Increment\n");
+            s("%s", &forl);
           if(forl=='1') {
             sys("cls");
             printf("\n Enter starting value: \n");
@@ -338,7 +440,9 @@ int main() {
         } // for loop increment
         else if(prog=='8') {
           sys("cls");
-          printf("\nMidterm Group Project\n");
+          fastloadbar();
+          sys("cls");
+          printf("\nMidterm Group Project\n\n");
           printf("ENTER YOUR RENT: ");
           s("%f", &rent);
           printf("ENTER YOUR TRANSPORT: ");
@@ -369,6 +473,8 @@ int main() {
         } //Midterm group proj. end
         else if(prog=='9') {
           sys("cls");
+          fastloadbar();
+          sys("cls");
           printf("\n LAB Exam\n");
           printf("\n Enter Three Numbers : \n");
           s(" %d %d %d",&fir, &sec, &thr);
@@ -380,6 +486,8 @@ int main() {
           printf("\n Product of 1st and 3rd Number: %d", fir, thr, product);
         } //Lab exam end
         else if(prog=='X'||prog=='x') {
+          sys("cls");
+          fastloadbar();
           sys("cls");
           printf("\nOperators\n");
           printf("\n[1] Bitwise Operator");
@@ -410,6 +518,9 @@ int main() {
          *                                             - SSL-ACTX                          *
          *                                                                                */
         core:
+        SetConsoleTitle(TEXT("ADB Programs (NOT working)"));
+        sys("cls");
+        fastloadbar();
         sys("cls");
         printf("\n\n\n\n");
         printf("\n                                    MENU \n\n");
@@ -425,13 +536,16 @@ int main() {
         case 'a': case 'A':
           sys("cls");
           printf("\nConnecting... Please wait..\n");
-          sys("\nadb start-server");
-          sys("\nadb connect 192.168.0.100");
-          sys("\nadb connect 192.168.0.101");
-          sys("\nadb connect 192.168.0.102");
-          sys("\nadb connect 192.168.0.103");
-          sys("\nadb connect 192.168.0.104");
-          sys("\nadb connect 192.168.0.105");
+          printf("\nStarting server...");
+          sys("adb start-server");
+          sleep(1);
+          printf("\nStarted successfully\n");
+          sys("adb connect 192.168.0.100");
+          sys("adb connect 192.168.0.101");
+          sys("adb connect 192.168.0.102");
+          sys("adb connect 192.168.0.103");
+          sys("adb connect 192.168.0.104");
+          sys("adb connect 192.168.0.105");
           sys("cls");
           printf("Connected!");
           break;
@@ -446,7 +560,7 @@ int main() {
         case 'b': case 'B':
           printf("\nDump Started...\n");
           sys("adb dumpsys");
-          printf("\n\tDumpsys saved at adb' directory.");
+          printf("\n Dumpsys saved at adb' directory.");
           break;
 
         case 'g': case 'G':
@@ -568,41 +682,65 @@ int main() {
 
     }
 
-        case 3:
-            sleep(1);
+         case 3:
+            SetConsoleTitle(TEXT("Credits"));
+            sys("cls");
+            endloadingbar();
             sys("cls");
             printf("\n\n\t  Credits\n");
+            printf("\n\n");
+            printf("\t\t\t        *- SSL ACTX -*\n");
             sleep(1);
-            sys("cls");
-            printf("\n\n\n\n\n\n\n\n\n\n\n");
-            printf("\t\t\t        *- SSL ACTX -*");
-            colop:
-            sys("color 12");
-            sys("color 23");
-            sys("color 34");
-            sys("color 45");
-            sys("color 56");
-            sys("color 67");
-            sys("color 78");
-            sys("color 89");
-            sys("color 90");
-            sys("color");
-            goto colop;
-            break;
+            printf("\n Matrix begins... ");
+            sleep(1);
+            printf("In 3");
+            sleep(1);
+            printf("...2");
+            sleep(1);
+            printf("...1");
+            sleep(1);
+
+            srand((unsigned)time(NULL)); //matrix
+	        HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);//console window
+
+	        SMALL_RECT windowSize = {0, 0, WIDTH-1, HEIGHT-1};
+            SetConsoleWindowInfo(wHnd, TRUE, &windowSize);
+
+	        COORD bufferSize = {WIDTH, HEIGHT};
+	        SetConsoleScreenBufferSize(wHnd, bufferSize);
+
+            CHAR_INFO consoleBuffer[WIDTH * HEIGHT];
+	        COORD charBufSize = {WIDTH, HEIGHT};
+	        COORD characterPos = {0, 0};
+	        SMALL_RECT writeArea = {0, 0, WIDTH-1, HEIGHT-1};
+
+	        SetConsoleTitle(TEXT("Credits (Matrix)"));
+
+	        for (int i = 0; i < WIDTH; i++) //trails
+	     	init_trail(&trails[i]);
+	        for (;;) { //matrix
+		    update(consoleBuffer);
+		    WriteConsoleOutputA(wHnd, consoleBuffer,
+            charBufSize, characterPos, &writeArea);
+		    Sleep(5);
+
+	    } break;
 
         case 4:
             printf("\n  Thank You!    Exiting....\n");
             sleep(1);
             sys("cls");
-            return 0; break;
+            return 0;
+            break;
 
         }// Main switch end bracket
 
-   //Exit menu--commented for now
     printf("\n\n [1] Return to  Main Menu");
     printf("\n\n [2] Exit\n");
     s("%s", &exm);
     if(exm=='1') {
+        sys("cls");
+        fastloadbar();
         sys("cls");
         goto choi;
     }
