@@ -188,7 +188,7 @@ int main() {
           break;
 
         case 'j': case 'J':
-            return 0; exit(0);
+            return 0;
 
         default:
           printf("\nUnknown!");
