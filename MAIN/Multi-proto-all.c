@@ -146,7 +146,7 @@ mwelg:
     loadingBar();
     system("cls");
     printf("\t\t\t\t\t\t\t\t\t\t\n\n");
-    printf("\n\n\n\n\n\n\t\t\t\    PROGRAM (TESTING)\n\t\t");
+    printf("\n\n\n\n\n\n\t\t\t    PROGRAM (TESTING)\n\t\t");
     printf("\n\t\t\t  Continue?   [Y]  [N] ");
     s("%c", & mwel);
     if (mwel == 'Y' || mwel == 'y')
